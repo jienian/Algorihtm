@@ -74,5 +74,6 @@ public class GreedAlgorithm {
             }
         }
         System.out.println("得到的选择结果是" + selects);
+        //得到的选择结果是[k1, k2, k3]
     }
 }

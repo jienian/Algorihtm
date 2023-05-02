@@ -26,3 +26,24 @@
             right.val = temp;
         }
     }
+    public static void main(String[] args) {
+    // 创建链表 3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1
+    ListNode head = new ListNode(3);
+    head.next = new ListNode(5);
+    head.next.next = new ListNode(8);
+    head.next.next.next = new ListNode(5);
+    head.next.next.next.next = new ListNode(10);
+    head.next.next.next.next.next = new ListNode(2);
+    head.next.next.next.next.next.next = new ListNode(1);
+
+    // 调用partition函数
+    Solution solution = new Solution();
+    ListNode result = solution.partition(head, 5);
+
+    // 输出结果链表
+    while(result != null){
+        System.out.print(result.val + " -> ");
+        result = result.next;
+    }
+    System.out.println("null");
+}

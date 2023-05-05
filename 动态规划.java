@@ -29,3 +29,19 @@ int fibonacci(int n){
     }
     return memo[n - 1] + memo[n - 2];
 }
+
+//三步问题
+class Solution {
+    public int waysToStep(int n) {
+        int[] dp = new int[3];
+        dp[0] = 1;
+        dp[1] = 2;
+        dp[2] = 4;
+        if(n < 4) return dp[ n - 1];
+        for(int i = 0; i < n - 3;i++){
+            dp[i % 3] = (dp[0] + (dp[1] + dp[2]) % 1000000007) %1000000007;
+        }
+        return dp[(n - 4) % 3];
+    }
+}
+//

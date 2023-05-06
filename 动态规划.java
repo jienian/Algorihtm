@@ -53,3 +53,33 @@ public int findMagicIndex(int[] nums){
     }
     return -1;
 }
+
+//幂集
+class Solution{
+    public List<List<Integer>> result = new ArrayList<>(); // 用于存储最终结果的列表
+    public List<List<Integer>> subsets(int[] nums){
+        dfs(nums, 0, new ArrayList<>()); // 调用深度优先搜索函数，传入数组、起始索引和空的中间结果列表
+        return result; // 返回最终结果
+    }
+    
+    public void dfs(int[] nums, int start, List<Integer> arr){
+        result.add(new ArrayList<>(arr)); // 将当前中间结果列表添加到最终结果列表中
+        for(int i = start; i < nums.length;++i){ // 从起始索引开始遍历数组
+            arr.add(nums[i]); // 将当前元素添加到中间结果列表中
+            dfs(nums, i + 1, arr); // 递归调用自身，继续向后遍历数组
+            arr.remove(arr.size() - 1); // 回溯，移除最后一个添加的元素，以便尝试其他可能性
+        }
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        int[] nums = {1, 2, 3};
+        List<List<Integer>> subsets = solution.subsets(nums);
+
+        System.out.println("All subsets:");
+        for (List<Integer> subset : subsets) {
+            System.out.println(subset);
+        }
+    }
+}

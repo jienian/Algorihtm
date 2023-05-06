@@ -70,7 +70,7 @@ class Solution{
             arr.remove(arr.size() - 1); // 回溯，移除最后一个添加的元素，以便尝试其他可能性
         }
     }
-
+    //测试main
     public static void main(String[] args) {
         Solution solution = new Solution();
 
@@ -83,3 +83,5 @@ class Solution{
         }
     }
 }
+
+

@@ -85,3 +85,64 @@ class Solution{
 }
 
 
+class Solution {
+    public int[] findSquare(int[][] matrix) {
+        // dp[i][j][0]表示,i,j左边连续的0的个数
+        // dp[i][j][1]表示,i,j上边连续的0的个数
+        int n = matrix.length;
+        int[][][] dp = new int[n][n][2];
+        int r = -1, c = -1; //左上角的行、列序号
+        int side = 0; // 保存最大黑方的边长
+        for(int i = 0; i < n; i++){ 
+            for(int j = 0; j < n; j++){
+                if(matrix[i][j] == 0){
+                    dp[i][j][0] = 1 + (j > 0 ? dp[i][j-1][0] : 0);
+                    dp[i][j][1] = 1 + (i > 0 ? dp[i-1][j][1] : 0);
+                }
+                for(int size = Math.min(dp[i][j][0], dp[i][j][1]); size >= 1; size--){
+                    // 针对[i][j]，获取左侧和上侧连续黑色区域的长度的最小值，因为要保证正方形
+                    if(dp[i][j-size+1][1] >= size && dp[i-size+1][j][0] >= size){
+                        // 要确定4条边，那么对应的上侧就是[i-size+1][j]0]
+                        // 对应的左侧边就是[i][j-size+1][1]
+                        // 如果这二者满足>=size则可以构成正方形
+                        if(size > side){
+                            side = size;
+                            r = i - size + 1;
+                            c = j - size + 1;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        if(r == -1 && c == -1) return new int[0];
+        return new int[]{r, c, side};
+
+    }
+}
+
+//面试题08.10. 颜色填充
+class Solution {
+    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+        // 队列
+        Queue<int[]> queue = new LinkedList<>();
+        queue.offer(new int[]{sr, sc});
+        // 方向数组
+        int[][] dir = {{0,1},{0,-1},{1,0},{-1,0}};
+        while (!queue.isEmpty()) {
+            int[] arr = queue.poll();
+            int i = arr[0];
+            int j = arr[1];
+            int oldColor = image[i][j];
+            image[i][j] = newColor;
+            for (int k = 0; k < dir.length; k++) {
+                int r = dir[k][0] + i;
+                int c = dir[k][1] + j;
+                if (r >= 0 && r < image.length && c >=0 && c < image[0].length && image[r][c] == oldColor && image[r][c] != newColor) {
+                    queue.offer(new int[]{r, c});
+                }
+            }
+        }
+        return image;
+    }
+}

@@ -16,8 +16,10 @@ class Solution {
     }
 }
 //排序
-class Solution {
-    public int missingNumber(int[] nums) {
+
+import java.util.Arrays;
+class Main {
+        public int missingNumber(int[] nums) {
         Arrays.sort(nums);
         int n = nums.length;
         for(int i =0; i < n; i++){
@@ -26,5 +28,14 @@ class Solution {
             }
         }
         return n;
+    
+        }
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 3, 4, 5}; 
+
+        Main solution = new Main();
+        int missingNumber = solution.missingNumber(nums);
+        System.out.println("missing: " + missingNumber);
     }
+
 }

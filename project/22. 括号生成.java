@@ -25,13 +25,55 @@ public class Main {
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        int n = 3; // Number of pairs of parentheses
+        int n = 3; // 括号对的数量
 
         List<String> result = solution.generateParenthesis(n);
 
-        System.out.println("Generated Parentheses Combinations:");
+        System.out.println("生成的括号组合:");
         for (String combination : result) {
             System.out.println(combination);
         }
     }
 }
+
+
+完整代码；
+import java.util.List;
+import java.util.ArrayList;
+
+public class Main {
+    
+    List<String> res = new ArrayList<>();
+    public List<String> generateParenthesis(int n){
+        dfs(n, n, "");
+        return res;
+    }
+       
+    private void dfs(int left, int right, String curStr){
+        if(left == 0 && right == 0){
+            res.add(curStr);
+            return;
+        }
+    
+    if(left > 0){
+        dfs(left - 1, right, curStr + "(");
+    }
+    
+    if(right > left){
+        dfs(left, right - 1, curStr + ")");
+    }
+ }
+    
+    public static void main(String[] args) {
+        Main solution = new Main();
+        int n = 3;
+        List<String> result = solution.generateParenthesis(n);
+        System.out.println("-------");
+        for(String combination : result){
+            System.out.println(combination);
+        }
+    }
+}
+
+时间复杂度为 O(2^n)。
+空间复杂度为 O(n)，即递归的深度。

@@ -8,10 +8,17 @@ public class Main{
             }
             swap(arr, i , minIndex);
         }
-    }
-    
+    } 
 
-    
+    publix static void swap(int[] arr, int i , int j ){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp; 
+    }
+
+    public static void comparator(int[] arr){
+        Arrays.sort(arr);
+    }
 }
 //注释版本：
 import java.util.Arrays;

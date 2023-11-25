@@ -19,6 +19,6 @@ public class Solution {
             nodeA = nodeA != null ? nodeA.next : headB;
             nodeB = nodeB != null ? nodeB.next : headA;
         }
-        return nodeA;
+        return nodeA;//12312
     }
 }

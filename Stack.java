@@ -10,6 +10,7 @@ public class Stack<T>{
             this.data = data;
         }
     }
+    
     //栈顶元素
     private StackNode<T> top;
     //出栈操作

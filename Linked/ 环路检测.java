@@ -1,6 +1,6 @@
 public class Solution {
     public ListNode detectCycle(ListNode head) {
-        // 不可能存在环路的情况直接返回
+        // 不可能存在环路的情况直接返回。
         if(head==null || head.next==null)  return null;
         ListNode fast = head, slow = head;
         while(fast!=null && fast.next!=null){

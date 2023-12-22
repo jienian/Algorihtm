@@ -4,8 +4,8 @@ public class Solution {
     /**
      * 判断数组中是否存在132模式
      *
-     * @param nums 给定的整数数组
-     * @return 如果存在132模式，则返回true；否则，返回false。
+     *  nums 给定的整数数组
+     *  如果存在132模式，则返回true；否则，返回false。
      */
     public boolean find132pattern(int[] nums) {
         int N = nums.length;

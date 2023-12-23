@@ -5,7 +5,7 @@ public class Solution {
      * 判断数组中是否存在132模式
      *
      *  nums 给定的整数数组
-     *  如果存在132模式，则返回true；否则，返回false。
+     *  如果存在132模式，返回true；否则，返回false。
      */
     public boolean find132pattern(int[] nums) {
         int N = nums.length;
@@ -18,7 +18,7 @@ public class Solution {
         }
 
         Stack<Integer> stack = new Stack<>();
-        // 从右往左遍历，查找132模式
+        //从右往左遍历，查找132模式
         for (int j = N - 1; j >= 0; j--) {
             if (nums[j] > minValues[j]) {
                 // 找到了元素2，查找元素3
@@ -31,7 +31,6 @@ public class Solution {
                 stack.push(nums[j]);
             }
         }
-
         return false;
     }
 

@@ -12,7 +12,7 @@ public class Solution {
                 // 快指针移向表头
                 fast = head;
                 while(fast != slow){
-                    // 快慢指针同步移动，再次相遇即为环开头
+                    // 快慢指针同步移动，再次相遇为环开头
                     fast = fast.next;
                     slow = slow.next;
                 }

@@ -7853,4 +7853,40 @@ class Solution {
 }
 
 ```
+#### 回溯 在二叉树中搜索所有值为7的节点，请返回根节点到这些节点的路径，并要求路径中不包含值为3的节点。
+
+
+``` java
+void preOrder(TreeNode root ) {
+	if (root == null)  return;
+	if (root.val == 7) res.add(root);
+	preOrder(root.left);
+	preOrder(root.right)
+}
+
+	void preOrder(TreeNode root) {
+		if (root== null) {
+			return;
+		}
+		path.add(root);
+		if (root.val == 7) {
+			res.add(new ArrayList<>(path));
+		}
+		preOrder(root.left);
+		preOrder(root.right);
+		path.remove(path.size() - 1);
+	}
+
+	void preOrder(TreeNode root) {
+		if (root== null || root.val == 3)  return;
+		path.add(root);
+		if (root.val == 7) {
+			res.add(new ArrayList<>(path));
+		}
+		preOrder(root.left);
+		preOrder(root.right);
+		path.remove(path.size() - 1);
+	}
+
+```
 

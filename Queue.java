@@ -52,5 +52,8 @@ public class Queue<T>{
         System.out.prinln("移除队列头部元素" + queue.remove());
         System.out.println("队列是否为空：" + queue.isEmpty()); //false
     }
+### O(N) 会导致出队操作效率低;可以考虑采用front指向队首元素的索引，记录队列的长度，定义rear = front + size.
+### 数组中包含元素的有效区为[front，rear - 1]，时间复杂度为O(1)    
 
+    
 }

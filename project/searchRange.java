@@ -15,7 +15,7 @@ public int[] searchRange(int[] nums, int target) {
 }
 
 private int findFirst(int[] nums, int target) {
-    int l = 0, h = nums.length; // 注意 h 的初始值
+    int l = 0, h = nums.length; 
     while (l < h) {
         int m = l + (h - l) / 2;
         if (nums[m] >= target) {

@@ -1,4 +1,4 @@
-```java
+
   //Input: [3,4,5,1,2],
   //Output: 1
   public int findMin(int[] nums) {
@@ -13,4 +13,4 @@
 	}
 	return nums[l];
 }
-```
+

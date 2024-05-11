@@ -1,3 +1,4 @@
+//两交换链表中的节点
 class Solution{
     public ListNode swapPairs(ListNode head){
         if(head == null || head.next == null){

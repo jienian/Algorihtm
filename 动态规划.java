@@ -146,3 +146,22 @@ class Solution {
         return image;
     }
 }
+
+//国王与金矿
+public int getMostGold(int totalWork, int[] p, int[] g) {
+	int[][] dp = new int[totalWorker + 1][p.length];
+	for(int = 1; i <= totalWorker; i++) {
+		if(i >= p[0]) dp[i][0] = g[0];
+	}
+	for (int i = 1; i <= totalWorker; i++) {	
+		for(int j = 1; j < p.length; j++) {
+			if(i  < p[j])
+				dp[i][j]  = dp[i][j - 1];
+			else 
+				dp[i][j] = Math.max(dp[i][j - 1], dp[i - p[j]][j - 1] + g[j]);
+			
+		}
+	}
+	return dp[totalWorker][p.length - 1];
+  
+}

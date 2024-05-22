@@ -14,5 +14,22 @@ class Solution {
         tmp.add(head.val);
     }
 
+    //第二种方法
+    //时间复杂度:O(n)入栈和出栈共使用时间.
+    //空间复杂度:O(n)stack和数组res共使用的额外空间。
+    class Solution {
+        public int[] reversePrint(ListNode head) {
+            LinkedList<Integer> stack = new LinkedList<Integer>();
+            while(head != null) {
+                stack.addLast(head.val);
+                head = head.next;
+            }
+            int[] res = new int[stack.size()];
+            for(int i = 0; i < res.length; i++)
+                res[i] = stack.removeLast();
+        return res;
+        }
+    }
+
     
 }

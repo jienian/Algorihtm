@@ -14,5 +14,5 @@ class Solution {
         tmp.add(head.val);
     }
 
-    }
+    
 }

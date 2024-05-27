@@ -165,3 +165,13 @@ public int getMostGold(int totalWork, int[] p, int[] g) {
 	return dp[totalWorker][p.length - 1];
   
 }
+// 输入蛋糕价格列表 priceList ，求重量为 n 蛋糕的最高售价
+int maxCakePrice(int n, int[] priceList) {
+    if (n <= 1) return priceList[n];  // 蛋糕重量 <= 1 时直接返回
+    int[] dp = new int[n + 1];        // 初始化 dp 列表
+    for (int j = 1; j <= n; j++) {    // 按顺序计算 f(1), f(2), ..., f(n)
+        for (int i = 0; i < j; i++)   // 从 j 种组合种选择最高售价的组合作为 f(j)
+            dp[j] = Math.max(dp[j], dp[i] + priceList[j - i]);
+    }
+    return dp[n];
+}

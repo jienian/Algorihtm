@@ -35,7 +35,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4}; // 示例数组
+        int[] nums = {1, 2, 3, 4}; 
 
         Solution solution = new Solution();
         boolean hasPattern = solution.find132pattern(nums);

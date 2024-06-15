@@ -21,13 +21,9 @@ try {
 # finalize是一个方法，用于在对象被垃圾回收前执行清理资源的操作，但通常不推荐使用，因为它可能导致资源回收不及时。
 
 ```java
-@Override
-protected void finalize() throws Throwable {
-    try {
-        // 清理资源的代码
-    } finally {
-        super.finalize();
+    protected void  finalize() throws Throwable {
+        // 关闭文件，清理资源...
     }
-}
+
 
 ```

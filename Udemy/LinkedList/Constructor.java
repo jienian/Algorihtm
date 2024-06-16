@@ -1,4 +1,4 @@
-```java
+
 public class LinkedList {
     
     private Node head;
@@ -40,7 +40,7 @@ public class LinkedList {
         tail = newNode; // 将新节点设置为尾部
         length = 1; // 链表的长度初始化为1
     }
-    
+
 
     public Node getHead() {
         return head;
@@ -80,6 +80,3 @@ public class LinkedList {
     }
 
 }
-
-
-```

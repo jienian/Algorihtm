@@ -83,17 +83,6 @@ public class LinkedList {
         length++; // 链表长度增加
     }
 
-    public void append(int value) {
-        Node newNode = new Node(value);
-        if(length == 0) {
-            head = newNode;
-            tail = newNode;
-        } else {
-            tail.next = newNode;
-            tail = newNode;
-        }
-        length++;
-    }
 
 }
 

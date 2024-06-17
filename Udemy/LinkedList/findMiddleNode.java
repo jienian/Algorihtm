@@ -22,7 +22,7 @@ public class Main {
         myLinkedList.append(4);
         myLinkedList.append(5);
         
-
+        //打印
         System.out.println("1 -> 2 -> 3 -> 4 -> 5");
         System.out.println( "Middle Node: "+ myLinkedList.findMiddleNode().value);
         

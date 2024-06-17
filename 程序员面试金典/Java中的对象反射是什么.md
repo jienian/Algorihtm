@@ -23,7 +23,6 @@ public class ReflectionExample {
         char[] value = (char[]) field.get(text);
         System.out.println("Original value: " + new String(value));
 
-        // 注意：直接修改String对象的内部数组是不安全的，这里仅为示例反射的能力
     }
 }
 

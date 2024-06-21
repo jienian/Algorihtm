@@ -5,7 +5,7 @@ int fibonacci(int i){
     return fibonacci(i - 1) + fibonacci(i - 2);
 }
 
-//记忆法优化后： 自上而下O(n)
+//记忆法优化后： 自上而下O(n) 
 int fibonacci(int i){
     return fibonacci(n, new int[n + 1]);
 int fibonacci(int i, int[] memo){

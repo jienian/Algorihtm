@@ -182,7 +182,7 @@ public void reverse() {
     Node temp = head;   // 当前遍历到的节点从头节点开始
     Node after = null;  // 初始化后一个节点为null
 
-    tail = head;        // 反转后，原来的头节点将成为尾节点
+    tail = head;        // 反转后，原来的头节点成为尾节点
 
     while (temp != null) {
         after = temp.next;  // 记录当前节点的下一个节点

@@ -1,6 +1,5 @@
 //队列数据结构实现
 public class Queue<T>{
-    //队列点类
     private static class Queue<T>{
         private T data;
         private QueueNode<T> next;
